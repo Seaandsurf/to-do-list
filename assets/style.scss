@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Droid+Sans|Roboto+Slab:400,700');
+
+* {
+    font-family: 'Raleway';
+    font-weight: 700;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #88d8b0;
+    overflow: hidden !important;
+
+}
+
+.box {
+    position: relative;
+    top: 0px;
+    width: 300px;
+    margin-left: -150px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 30px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    border-radius: 21px;
+    background-color: white;
+    vertical-align: bottom !important;
+
+    &__todo {
+        padding-bottom: 5px;
+
+        &h1 {
+            padding-top: 5px;
+            color: #ea1212;
+            font-weight: 700;
+            text-align: center;
+            padding-top: 10px;
+            //     text-transform: lowercase; 
+        }
+
+        &__new-act {
+            width: 68%;
+            height: 30px;
+            color: #636363;
+            padding: 3px 7px;
+            font-size: 1em;
+            border-radius: 12px;
+            border: 1px solid #ccc;
+            margin-bottom: 7px;
+            margin-left: 25px;
+
+            &:focus {
+                outline: none;
+                border: 2px solid #52c1bc;
+            }
+
+            &::placeholder {
+                font-size: 12px;
+            }
+        }
+
+        &__add-new {
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+            position: relative;
+            top: 0px;
+            left: 9px;
+            z-index: 9999;
+            background-color: #52c1bc;
+            line-height: 1em;
+            font-size: 2em;
+            border: none;
+            padding-bottom: 8px;
+            text-align: center;
+            color: #fff;
+            transition: transform .3s;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+            outline: none;
+
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                outline: none !important;
+            }
+
+            &::before {
+                content: '+';
+                position: relative;
+                top: 4px;
+            }
+
+            &__active {
+                background-color: #45a8a3;
+                transform: rotate(45deg);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+                transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+                outline: none;
+
+                &::before {
+                    content: '+';
+                    position: relative;
+                    top: 4px;
+                }
+            }
+
+        }
+    }
+
+}
+
+
+
+ul {
+    margin-left: 0px;
+    margin-top: 10px;
+    list-style: none;
+    text-align: left;
+    padding: 0;
+    box-sizing: border-box;
+    height: 240px;
+    overflow-y: auto;
+}
+
+ul li {
+    line-height: 40px;
+    color: #525252;
+    //transition: background-color .3s;
+    padding-left: 20px;
+    padding-right: 20px;
+    list-style: none;
+
+
+
+}
+
+ul li:nth-child(n + 1)::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, white, #52c1bc, white);
+}
+
+ul li:hover {
+    background-color: #eafff3;
+    cursor: pointer;
+}
+
+ul li.checked {
+    background: #eafff3;
+    text-decoration: line-through;
+    color: #999;
+
+
+}
+
+
+ul li.checked::before {
+    content: '✔';
+    text-decoration: none !important;
+    padding: 0;
+    display: inline-block !important;
+    position: relative;
+    color: #179219;
+    left: -15px;
+    margin-right: -6px;
+
+}
+
+.close {
+    position: absolute;
+    right: 5px;
+    margin-right: 15px;
+    text-align: center;
+    padding: 8px 0px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.close:hover {
+    text-decoration: none;
+    transform: scale(1.5, 1.5);
+    overflow: hidden;
+}
