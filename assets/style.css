@@ -28,14 +28,17 @@ body {
 .box__todo {
   padding-bottom: 5px;
 }
-.box__todoh1 {
+.box__todo__title {
   padding-top: 5px;
-  color: #ea1212;
+  color: #52c1bc;
   font-weight: 700;
   text-align: center;
   padding-top: 10px;
 }
-.box__todo__new-act {
+.box__todo__inputbtn {
+  display: flex;
+}
+.box__todo__inputbtn__new-act {
   width: 68%;
   height: 30px;
   color: #636363;
@@ -44,19 +47,19 @@ body {
   border-radius: 12px;
   border: 1px solid #ccc;
   margin-bottom: 7px;
-  margin-left: 25px;
+  margin-left: 5px;
 }
-.box__todo__new-act:focus {
+.box__todo__inputbtn__new-act:focus {
   outline: none;
   border: 2px solid #52c1bc;
 }
-.box__todo__new-act::-moz-placeholder {
+.box__todo__inputbtn__new-act::-moz-placeholder {
   font-size: 12px;
 }
-.box__todo__new-act::placeholder {
+.box__todo__inputbtn__new-act::placeholder {
   font-size: 12px;
 }
-.box__todo__add-new {
+.box__todo__inputbtn__add-new {
   width: 47px;
   height: 47px;
   border-radius: 50%;
@@ -75,24 +78,24 @@ body {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
   outline: none;
 }
-.box__todo__add-new:hover {
+.box__todo__inputbtn__add-new:hover {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   outline: none !important;
 }
-.box__todo__add-new::before {
+.box__todo__inputbtn__add-new::before {
   content: "+";
   position: relative;
   top: 4px;
 }
-.box__todo__add-new__active {
+.box__todo__inputbtn__add-new__active {
   background-color: #45a8a3;
   transform: rotate(45deg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
   outline: none;
 }
-.box__todo__add-new__active::before {
+.box__todo__inputbtn__add-new__active::before {
   content: "+";
   position: relative;
   top: 4px;
@@ -106,23 +109,14 @@ ul {
   padding: 0;
   box-sizing: border-box;
   height: 240px;
-  overflow-y: auto;
+  overflow: auto;
 }
-
 ul li {
   line-height: 40px;
   color: #525252;
   padding-left: 20px;
   padding-right: 20px;
   list-style: none;
-}
-
-ul li:nth-child(n+1)::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, white, #52c1bc, white);
 }
 
 ul li:hover {
@@ -154,11 +148,11 @@ ul li.checked::before {
   text-align: center;
   padding: 8px 0px;
   text-decoration: none;
-  overflow: hidden;
+  overflow: auto;
 }
 
 .close:hover {
   text-decoration: none;
   transform: scale(1.5, 1.5);
-  overflow: hidden;
+  overflow: auto;
 }/*# sourceMappingURL=style.css.map */
