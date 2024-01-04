@@ -1,5 +1,4 @@
-// Create a "close" button and append it to each list item
-
+// creation du "X" button pour chaque item:
 window.onload = function () {
     added();
     closed();
@@ -11,7 +10,7 @@ function added() {
     let boxy = document.getElementById("box-id");
     let todo = document.getElementById("to-do");
     for (i = 0; i < myNodelist.length; i++) {
-        // Creation d'un <span class="close"> x <span>
+        // Creation d'un <span class="close"> x <span>:
         let span = document.createElement("SPAN");
         let txt = document.createTextNode("\u00D7");
         span.className = "close";
@@ -20,7 +19,7 @@ function added() {
     }
 }
 
-// Click on a "x" button to delete the current list item
+// Cliquer sur "x" button pour effacer la ligne:
 function closed() {
     let close = document.getElementsByClassName("close");
 
@@ -33,7 +32,7 @@ function closed() {
     }
 }
 
-// Add a "checked" symbol when clicking on a list item
+// Ajouter un "✔" symbole quand tu cliques sur la tache:
 function checked() {
     let list = document.querySelector('ul');
     list.addEventListener('click', function (ev) {
@@ -52,14 +51,16 @@ function addnew() {
             div.style.display = "none";
         }
     }
-
+// fonction de création de la nouvelle tâche:
     let li = document.createElement("li");
     let inputs = document.getElementById("new").value;
     let t = document.createTextNode(inputs);
     li.appendChild(t);
     if (inputs === '') {
+        // Si rien est ecrit et que le button est cliqué:
         alert("Come on, On a TOUJOURS quelque chose a faire!");
     } else {
+        // Ajout d'une <li> pour la nouvelle tahce:
         document.getElementById("list").appendChild(li);
     }
     
@@ -72,13 +73,41 @@ function addnew() {
 
     for (i = 0; i < close.length; i++) {
         close[i].onclick = function () {
-            var div = this.parentElement;
+            let div = this.parentElement;
             div.style.display = "none";
         }
     }
 
-    // scrollBarFix()
+     scrollBarFix()
 }
+
+
+    document.getElementsByClassName('addBoxButton').addEventListener('click', function() {
+        const boxId = document.getElementById('box-id');
+        const newBox = document.createElement('div');
+        newBox.className = 'box';
+        newBox.innerHTML = `
+            <div class="box__todo" id="to-do">
+                <h1 class="box__todo__title">Nouvelle Liste de tâches:</h1>
+                <div class="box__todo__inputbtn">
+                    <input type="text" class="box__todo__inputbtn__new-act" placeholder="What do you need to do next?">
+                    <button class="box__todo__inputbtn__add-new">Add</button>
+                </div>
+            </div>
+            <ul class="box__list">
+                <!-- Les tâches seront ajoutées ici -->
+            </ul>
+        `;
+        boxId.appendChild(newBox);
+    });
+;
+
+
+
+
+
+
+
 
 
 
